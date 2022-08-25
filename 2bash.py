@@ -1,3 +1,6 @@
+# This file using for generating of bash script,
+# which will be used for requesting data from GitHub
+
 import pandas as pd
 
 access_token = "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"
