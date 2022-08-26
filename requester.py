@@ -1,6 +1,8 @@
+import time
+
 import requests
 
-token = "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"
+token = "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"
 
 # search_final_url = 'https://api.github.com/search/code?q=something+in:file+language:java'
 #
@@ -16,10 +18,22 @@ token = "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"
 
 url = "https://api.github.com/search/code?q=addClass+in:file"
 
+url2 = "https://api.github.com/search/code?q=endsWith+in:file"
+
 headers = {
-  'Authorization': 'Token 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'
+  'Authorization': 'Token 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'
 }
 
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET", url, headers=headers).json()
 
-print(response.text)
+print(response)
+print(response['total_count'])
+print()
+
+time.sleep(10)
+
+response2 = requests.request("GET", url2, headers=headers).json()
+
+print(response2)
+print(response2['total_count'])
+print()
