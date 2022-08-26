@@ -30,14 +30,13 @@ for name in langauge_names:
     print("for str in ${%s[@]}; do" % array_name)
     print("  INPUT=$(curl --location --request GET \"https://api.github.com/search/code?q=$str+in:file+language:%s\" "
           "--header \'Authorization: Token %s\')" % (name.lower(), access_token))
-    print("  echo %s $str AnswerLength ${#INPUT}" % name)
     print("  sub1=${INPUT#*:}")
     print("  sub2=${INPUT#*,}")
     print("  left=$((${#INPUT} - ${#sub1} + 1))")
     print("  right=$((${#INPUT} - ${#sub2}))")
     print("  length=$(($right - $left - 1))")
     print("  result=${INPUT:${left}:${length}}")
-    print("  echo $str $result >> results.txt")
+    print("  echo lang: %s, answer_length: ${#INPUT}, method: $str, amount: $result >> results.txt" % name)
     print("  sleep 61")
     print("done")
 
