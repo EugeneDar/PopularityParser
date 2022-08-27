@@ -2,7 +2,7 @@ import time
 
 import requests
 
-token = "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"
+token = ""
 url = "https://api.github.com/search/code?q=addClass+in:file"
 
 url2 = "https://api.github.com/search/code?q=endsWith+in:file"
