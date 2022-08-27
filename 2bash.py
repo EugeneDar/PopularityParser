@@ -3,7 +3,7 @@
 
 import pandas as pd
 
-access_token = "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"
+access_token = ""
 
 ex_data = pd.read_excel('methods.xlsx')
 
